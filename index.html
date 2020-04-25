@@ -15,16 +15,12 @@
         var canvas = document.getElementById("myCanvas"),
             context = canvas.getContext("2d");
 
-        context.strokeStyle = "red";
         context.fillStyle = "blue";
+        context.fillRect(50,50,100,100);
 
-        context.lineWidth = 15;
-        context.lineJoin = "miter";
-        context.strokeRect(40,40,100,100);
-        context.lineJoin = "bevel";
-        context.strokeRect(180, 40, 100 ,100);
-        context.lineJoin = "round";
-        context.strokeRect(310,40,100,100);
+        context.globalAlpha = 0.5;
+        context.fillStyle = "red";
+        context.fillRect(100,100,100,100);
         
 
     </script>
