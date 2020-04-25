@@ -7,7 +7,7 @@
     <title>Canvas</title>
 </head>
 <body>
-    <canvas id="myCanvas" width="350" height="200" style="background-color: #eee; border: 1px solid #ccc;">
+    <canvas id="myCanvas" width="450" height="200" style="background-color: #eee; border: 1px solid #ccc;">
         Ваш браузер не поддерживает Canvas
     </canvas>
 
@@ -16,17 +16,16 @@
             context = canvas.getContext("2d");
 
         context.strokeStyle = "red";
-        
-        context.setLineDash([15,5]);
+        context.fillStyle = "blue";
+
+        context.lineWidth = 15;
+        context.lineJoin = "miter";
         context.strokeRect(40,40,100,100);
-
-        context.strokeStyle = "blue";
-        context.setLineDash([2,5,6]);
-        context.strokeRect(180,40.100,100);
-
-        context.strokeStyle = "green";
-        context.setLineDash([2]);
-        context.strokeRect(320, 40, 100, 100);
+        context.lineJoin = "bevel";
+        context.strokeRect(180, 40, 100 ,100);
+        context.lineJoin = "round";
+        context.strokeRect(310,40,100,100);
+        
 
     </script>
 </body>
