@@ -15,9 +15,12 @@
             context = canvas.getContext("2d");
         
         context.beginPath();
-        context.rect(30,20,100,90);
+        context.moveTo(30,20);
+        context.lineTo(130,20);
+        context.lineTo(130,110);
+        context.lineTo(30,110);
         context.closePath();
-        context.strokeStyle = "blue";
+        context.strokeStyle = "red";
         context.stroke();
     </script>
 </body>
