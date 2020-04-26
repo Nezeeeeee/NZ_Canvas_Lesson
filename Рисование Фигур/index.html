@@ -15,11 +15,9 @@
             context = canvas.getContext("2d");
         
         context.beginPath();
-        context.moveTo(30,20);
-        context.lineTo(150,140);
-        context.lineTo(250,30);
-        context.closePath(); //Если это убрать то дополнительная соединяющая линия отображатся не будет
-        context.strokeStyle = "black";
+        context.rect(30,20,100,90);
+        context.closePath();
+        context.strokeStyle = "blue";
         context.stroke();
     </script>
 </body>
