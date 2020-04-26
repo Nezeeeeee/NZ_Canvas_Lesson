@@ -14,13 +14,25 @@
         var canvas = document.getElementById("myCanvas"),
             context = canvas.getContext("2d");
         
+        //рисуем первый красный прямоугльник
         context.beginPath();
-        context.rect(30,20,100,90);
+        context.moveTo(30,20);
+        context.lineTo(130,20);
+        context.lineTo(130,110);
+        context.lineTo(30,110);
         context.closePath();
         context.strokeStyle = "red";
-        context.fillStyle = "blue";
-        context.fill();
         context.stroke();
+
+        //context.clip();
+
+        //Рисуем второй зеленый прямоугольник
+        context.beginPath();
+        context.rect(10,50,180,70);
+        context.closePath();
+        context.strokeStyle = "green";
+        context.stroke();
+        
     </script>
 </body>
 </html>
