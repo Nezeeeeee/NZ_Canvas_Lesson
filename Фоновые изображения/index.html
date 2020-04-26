@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
     <title>Фоновые изображения</title>
 </head>
 <body>
-    
+    <canvas id="myCanvas" width="300" height="200" style="background-color: #eee; border: 1px solid #ccc;">
+        Ваш браузер не поддерживает Canvas
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas"),
+            context = canvas.getContext("2d");
+
+        var img = new Image();
+        img.src  = "pictures/ter.jpg";
+        img.onload = function(){
+            var pattern = context.createPattern(img,"repeat");
+            context.fillStyle = pattern;
+            context.fillRect(10, 10, 150, 150);
+            context.strokeRect(10,10,150,150);
+            
+        };
+    </script>
 </body>
 </html>
