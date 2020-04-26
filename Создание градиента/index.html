@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
+    <title>Создание градиента</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="200" style="background-color: #eee; border: 1px solid #ccc;">
+        Ваш браузер не поддерживает Canvas
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas"),
+            context = canvas.getContext("2d"),
+            gradient = context.createLinearGradient(50,30,150,150);
+        
+        gradient.addColorStop(0, "blue");
+        gradient.addColorStop(1,"white");
+        context.fillStyle = gradient;
+        context.fillRect(50,30,150,150);
+        context.strokeRect(50,30,150,150);
+    </script>
+</body>
+</html>
