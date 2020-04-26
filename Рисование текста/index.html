@@ -6,6 +6,17 @@
     <title>Рисование текста</title>
 </head>
 <body>
-    
+    <canvas id="myCanvas" width="300" height="200" style="background-color: #eee; border: 1px solid #ccc;">
+        Ваш браузер не поддерживает Canvas
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas"),
+            context = canvas.getContext("2d");
+
+        context.font = "22px Verdana";
+        context.strokeStyle = "red";
+        context.strokeText("Hello HTML5!", 20, 50);
+    </script>
 </body>
 </html>
