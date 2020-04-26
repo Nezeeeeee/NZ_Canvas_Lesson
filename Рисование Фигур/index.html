@@ -16,28 +16,8 @@
         context.strokeStyle = "red";
 
         context.beginPath();
-        context.moveTo(20,90);
-        context.arc(20,90,50,0, Math.PI/2, false);
-        context.closePath();
-        context.stroke();
-       
-
-        context.beginPath();
-        context.moveTo(130,90);
-        context.arc(130,90,50,0, Math.PI, false);
-        context.closePath();
-        context.stroke();
-
-
-        context.beginPath();
-        context.moveTo(240,90);
-        context.arc(240,90,50,0, Math.PI*3/2, false);
-        context.closePath();
-        context.stroke();
-
-
-        context.beginPath();
-        context.arc(350,90,50,0, Math.PI*2, false);
+        context.moveTo(0,150);
+        context.arcTo(0,0,150,0,140);
         context.closePath();
         context.stroke();
         
