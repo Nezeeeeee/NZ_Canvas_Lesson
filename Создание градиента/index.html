@@ -14,7 +14,7 @@
     <script>
         var canvas = document.getElementById("myCanvas"),
             context = canvas.getContext("2d"),
-            gradient = context.createLinearGradient(50,30,150,30);
+            gradient = context.createRadialGradient(120,100,100,120,100,30);
         
         gradient.addColorStop(0, "blue");
         gradient.addColorStop(1,"white");
