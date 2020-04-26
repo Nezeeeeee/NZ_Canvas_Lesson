@@ -6,6 +6,21 @@
     <title>Рисование фигур</title>
 </head>
 <body>
-    
+    <canvas id="myCanvas" width="300" height="200" style="background-color: #eee; border: 1px solid #ccc;">
+        Ваш браузер не поддерживаает Canvas
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas"),
+            context = canvas.getContext("2d");
+        
+        context.beginPath();
+        context.moveTo(30,20);
+        context.lineTo(150,140);
+        context.lineTo(250,30);
+        context.closePath(); //Если это убрать то дополнительная соединяющая линия отображатся не будет
+        context.strokeStyle = "black";
+        context.stroke();
+    </script>
 </body>
 </html>
