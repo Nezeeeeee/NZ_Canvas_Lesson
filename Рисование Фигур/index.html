@@ -6,31 +6,39 @@
     <title>Рисование фигур</title>
 </head>
 <body>
-    <canvas id="myCanvas" width="300" height="200" style="background-color: #eee; border: 1px solid #ccc;">
+    <canvas id="myCanvas" width="420" height="200" style="background-color: #eee; border: 1px solid #ccc;">
         Ваш браузер не поддерживаает Canvas
     </canvas>
 
     <script>
         var canvas = document.getElementById("myCanvas"),
             context = canvas.getContext("2d");
-        
-        //рисуем первый красный прямоугльник
-        context.beginPath();
-        context.moveTo(30,20);
-        context.lineTo(130,20);
-        context.lineTo(130,110);
-        context.lineTo(30,110);
-        context.closePath();
         context.strokeStyle = "red";
+
+        context.beginPath();
+        context.moveTo(20,90);
+        context.arc(20,90,50,0, Math.PI/2, false);
+        context.closePath();
+        context.stroke();
+       
+
+        context.beginPath();
+        context.moveTo(130,90);
+        context.arc(130,90,50,0, Math.PI, false);
+        context.closePath();
         context.stroke();
 
-        context.clip();
 
-        //Рисуем второй зеленый прямоугольник
         context.beginPath();
-        context.rect(10,50,180,70);
+        context.moveTo(240,90);
+        context.arc(240,90,50,0, Math.PI*3/2, false);
         context.closePath();
-        context.strokeStyle = "green";
+        context.stroke();
+
+
+        context.beginPath();
+        context.arc(350,90,50,0, Math.PI*2, false);
+        context.closePath();
         context.stroke();
         
     </script>
