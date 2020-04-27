@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление теней</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="300" height="200" style="background-color: #eee; border: 1px solid #ccc;">
+        Ваш браузер не поддерживает Canvas
+    </canvas>
+    <div>
+        <button id="change">click</button>
+    </div>
+    <script>
+        var canvas = document.getElementById("myCanvas"),
+            context = canvas.getContext("2d");
+
+
+        document.getElementById("change").onclick = function (e) {
+            context.shadowOffsetX = 16;
+            context.shadowOffsetY = 17;
+            context.shadowBlur = 8;
+            context.shadowColor = "#456";
+            context.drawImage(img, 80, 70, 128, 96);
+        };
+        context.font = "16px Verdana";
+        context.fillStyle = "#222";
+        context.shadowOffsetX = 3;
+        context.shadowOffsetY = 3;
+        context.shadowBlur = 3;
+        context.shadowColor = "#AAA";
+        context.fillText("Тени в HTML5", 80, 30);
+
+
+        var img = new Image();
+        img.src = "pic/zil.jpg";
+        img
+        img.onload = function () {
+
+            context.shadowOffsetX = 8;
+            context.shadowOffsetY = 8;
+            context.shadowBlur = 5;
+            context.shadowColor = "#333";
+            context.drawImage(img, 80, 70, 128, 96);
+        };
+    </script>
+</body>
+
+</html>
