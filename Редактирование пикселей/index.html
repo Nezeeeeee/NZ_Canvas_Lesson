@@ -6,7 +6,7 @@
     <title>Редактирование пикселей</title>
 </head>
 <body>
-    <canvas id="myCanvas" width="530" height="350" style="background-color: #eee; border: 1px solid #ccc;">
+    <canvas id="myCanvas" width="530" height="200" style="background-color: #eee; border: 1px solid #ccc;">
         Ваш браузер не поддерживает Canvas
     </canvas>
 
@@ -19,15 +19,21 @@
         img.onload = function(){
 
             context.drawImage(img, 0, 0);
-            var imageDate = context.getImageDate(0,0,100,100);
-            var red = imageDate.date[0];
-            var green = imageDate.date[1];
-            var blue = imageDate.date[2];
-            var alpha = imageDate.date[3];
-            imageDate.date[4];
-            imageDate.date[5];
-            imageDate.date[6];
-            imageDate.date[7];
+            var imageData = context.getImageData(0,0,img.width, img.height);
+            var red, green, blue, greyscale;
+
+            for(var i = 0; i < imageData.data.length; i+=4){
+                red = imageData.data[i];
+                green = imageData.data[i+1];
+                blue = imageData.data[i+2];
+                greyscale = red * 0.3 + green * 0.59 + blue * 0.11;
+                imageData.data[i] = greyscale;
+                imageData.data[i+1] = greyscale;
+                imageData.data[i+2] = greyscale;
+
+            }
+
+            context.putImageData(imageData,img.width + 10, 0);
         };
     </script>
 </body>
