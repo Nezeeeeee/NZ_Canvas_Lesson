@@ -20,20 +20,16 @@
 
             context.drawImage(img, 0, 0);
             var imageData = context.getImageData(0,0,img.width, img.height);
-            var red, green, blue, greyscale;
+            var newImageData = context.createImageData(imageData);
 
-            for(var i = 0; i < imageData.data.length; i+=4){
-                red = imageData.data[i];
-                green = imageData.data[i+1];
-                blue = imageData.data[i+2];
-                greyscale = red * 0.3 + green * 0.59 + blue * 0.11;
-                imageData.data[i] = greyscale;
-                imageData.data[i+1] = greyscale;
-                imageData.data[i+2] = greyscale;
-
+            for(var i = 0; i < newImageData.data.length; i++){
+                newImageData.data[i] = imageData.data[i];
+                if((i+1)%4 ===0){
+                    newImageData.data[i] = 120;
+                }
             }
 
-            context.putImageData(imageData,img.width + 10, 0);
+            context.putImageData(newImageData, img.width + 10; 0);
         };
     </script>
 </body>
