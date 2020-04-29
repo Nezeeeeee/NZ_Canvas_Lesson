@@ -14,14 +14,13 @@
         var canvas = document.getElementById("myCanvas"),
             context = canvas.getContext("2d");
         
-        context.fillStyle = "blue";
-        context.fillRect(100,50,100,100);
-
-        context.transform(Math.cos(Math.PI/6), Math.sin(Math.PI/6), -1 * Math.sin(Math.PI/6), Math.cos(Math.PI/6), 0, 0);
-
-        context.globalAlpha = 0.5;
-        context.fillStyle = "red";
-        context.fillRect(100,50,100,100);
+        var k = 0;
+        for(var x = 0; x < 30; x++){
+            k = Math.floor(255/34 * x);
+            context.fillStyle = "rgb(" + k + "," + k + "," + k + ")";
+            context.fillRect(50,50,200,100);
+            context.setTransform(1,0,0,1,x,x);
+        }
     </script>
 </body>
 </html>
